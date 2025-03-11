@@ -1,0 +1,8 @@
+- name: Deploy apache web server with white list ip
+  hosts: myhosts
+  become:  yes
+  become_method: sudo
+  roles:
+    - apache-deployment-role
+ 
+

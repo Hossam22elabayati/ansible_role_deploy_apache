@@ -1,0 +1,8 @@
+ansible-main1    ansible_host=vm1
+[myhosts]
+ansible-main1
+
+[myhost:vars]
+ansible_connect=ssh 
+ansible_user=ansible
+ansible_private_key=~/.ssh/id_rsa
