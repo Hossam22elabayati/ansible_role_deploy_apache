@@ -1,38 +1,61 @@
-Role Name
-=========
+Ansible Role: Apache Deployment
+------------------------------------------
+This Ansible role automates the deployment of the Apache web server with customizable configuration files. It includes templates for configuring whitelist IPs, server name, and document rules, as well as a handler to restart Apache whenever the configuration changes.
 
-A brief description of the role goes here.
+Table of Contents
+----------------------------
+- Requirements
+- Role Variables
+- Dependencies
+- Example Playbook
+- Handler
+- License
+- Author Information
 
 Requirements
-------------
+----------------------------------
+Before using this role, ensure you have the following:
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Ansible installed on the control machine.
+
+Python installed on the target hosts.
+
+Root or sudo access on the target hosts to install packages and modify configurations.
 
 Role Variables
---------------
+----------------------------------------------------
+This role allows you to customize the following settings:
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Apache Server Name: The domain name or IP address for the Apache server.
+
+Document Root: The directory where the website files are stored.
+
+Whitelist IPs: A list of IP addresses allowed to access specific directories.
+
+Document Rules: Configuration for directory indexing, access controls, and overrides.
+
+You can override these variables in your playbook or inventory.
 
 Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+---------------------------------------------------------
+This role does not depend on any other roles from Ansible Galaxy. However, it assumes the target hosts are running a supported Linux distribution (e.g., Ubuntu, CentOS).
 
 Example Playbook
-----------------
+To use this role, create an inventory file listing your target hosts and a playbook to apply the role. Pass the necessary variables to customize the Apache configuration.
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Run the playbook using the ansible-playbook command, specifying the inventory file and playbook.
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+Handler
+------------------------------------------------------
+This role includes a handler to restart Apache whenever the configuration file changes. This ensures that any updates to the configuration take effect immediately.
 
 License
--------
-
-BSD
+---------------------------------------------------
+This project is licensed under the BSD License. See the LICENSE file for details.
 
 Author Information
-------------------
+This role was created by [Hossam Mahmoud].
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+GitHub: Hossam22elabayati
+
+Email: hossamelabayati@gmail.com
