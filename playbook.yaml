@@ -3,6 +3,6 @@
   become:  yes
   become_method: sudo
   roles:
-    - apache-deployment-role
+    - ~/roles/apache-deployment-role
  
 
